@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirection for taking the access token</title>
+    <script>
+    </script>
+</head>
+<body>
+    <div>
+        <p>Helloo bruh</p>
+        <button id="exchange">Click Here to get your access token</button>
+    </div>
+
+</body>
+<script>
+    let config = {
+        client_id: "plant-health",
+        redirect_uri:"http://localhost:8080/iam-1.0/rest-iam/oauth/callback",
+        authorization_endpoint:"http://localhost:8080/iam-1.0/rest-iam/authorize",
+        token_endpoint: "http://localhost:8080/iam-1.0/rest-iam/oauth/token",
+        requested_scopes: "resource.read resource.write"
+        //authorization_endpoint: "https://iam.planthealth.me:8443/rest-iam/authorize",
+        //redirect_uri: "https://planthealth.me:8443/",
+    };
+    function parseQueryString(string) {
+        if(string == "") { return {}; }
+        var segments = string.split("&").map(s => s.split("=") );
+        var queryString = {};
+        segments.forEach(s => queryString[s[0]] = s[1]);
+        return queryString;
+    }
+    function sendPostRequest(url, params, success, error) {
+        var request = new XMLHttpRequest();
+        request.open('POST', url, true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        request.onload = function() {
+            var body = {};
+            try {
+                body = JSON.parse(request.response);
+            } catch(e) {}
+
+            if(request.status == 200) {
+                success(request, body);
+            } else {
+                error(request, body);
+            }
+        }
+        request.onerror = function() {
+            error(request, {});
+        }
+        var body = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+        request.send(body);
+    }
+    function handlePKCERedirect(){
+        //////////////////////////////////////////////////////////////////////
+        // OAUTH REDIRECT HANDLING
+
+        //document.getElementById("signin").classList.remove("d-none");
+        //document.getElementById("signout").classList.add("d-none");
+        // Handle the redirect back from the authorization server and
+        // get an access token from the token endpoint
+        let q = parseQueryString(window.location.search.substring(1));
+
+        // Check if the server returned an error string
+        if(q.error) {
+            alert("Error returned from authorization server: "+q.error);
+            console.log(error.error+": "+error.error_description);
+        }
+
+        // If the server returned an authorization code, attempt to exchange it for an access token
+        if(q.code) {
+            // Verify state matches what we set at the beginning
+            if(localStorage.getItem("pkce_state") != q.state) {
+                alert("Invalid state");
+            } else {
+                // Exchange the authorization code for an access token
+                sendPostRequest(config.token_endpoint, {
+                    //grant_type: "authorization_code",
+                    authorization_code: q.code,
+                    //client_id: config.client_id,
+                    //redirect_uri: config.redirect_uri,
+                    code_verifier: localStorage.getItem("pkce_code_verifier")
+                }, function(request, body) {
+                    // Initialize your application now that you have an access token.
+                    const signInEvent = new CustomEvent("signIn", { detail: body });
+                    document.dispatchEvent(signInEvent);
+                    // Replace the history entry to remove the auth code from the browser address bar
+                    window.history.replaceState({}, null, "/");
+                }, function(request, error) {
+                    // This could be an error response from the OAuth server, or an error because the
+                    // request failed such as if the OAuth server doesn't allow CORS requests
+                    console.log(error.error+": "+error.error_description);
+                });
+            }
+            // Clean these up since we don't need them anymore
+            localStorage.removeItem("pkce_state");
+            localStorage.removeItem("pkce_code_verifier");
+        }
+    }
+    let codeVerifier = localStorage.getItem("pkce_code_verifier");
+    let authorizationCode=parseQueryString(window.location.search.substring(1));
+    let tokenEndpoint = "http://localhost:8080/iam-1.0/rest-iam/oauth/token"
+    // get request to /oauth/token
+    // with query parameters code verifier and authorization code
+    console.log(codeVerifier);
+    console.log(authorizationCode);
+    const btn = document.getElementById("exchange");
+    btn.addEventListener("click",(ev)=>{
+        handlePKCERedirect();
+        /*var url = config.token_endpoint
+            + "?authorization_code="+encodeURIComponent(authorizationCode)
+            + "&code_verifier="+encodeURIComponent(codeVerifier)
+        ;
+        console.log(url);
+
+        // Redirect to the authorization server
+        window.location = url;*/
+
+    })
+
+</script>
+</html>

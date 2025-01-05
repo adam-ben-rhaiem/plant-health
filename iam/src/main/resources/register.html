@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <script>
+      async function signIn(e){
+        e.preventDefault();
+        let loginForm = document.getElementById('signInForm');
+        let payload = new FormData(loginForm);
+        let	myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+        let options = {
+          method: 'POST',
+          headers: myHeaders,
+          mode: 'cors',
+          cache: 'no-cache',
+          credentials: 'same-origin',
+          redirect: 'follow',
+          body: new URLSearchParams(payload)
+        };
+        fetch(`${loginForm.action}`, options)
+                .then(response => {
+                  // HTTP See Other 303 response
+                  //if(response.redirected){
+                    //window.location = response.url;
+                  //}
+                  console.log(response);
+                }).catch(function(err) {
+          console.info(err + " url: " + `${loginForm.action}`);
+        });
+      }
+    </script>
+</head>
+<body>
+<form method="post" action="auth/register" class="signin-form needs-validation" id="signInForm" novalidate>
+  <div class="form-group mb-3">
+    <label class="label" for="username">Identifiant</label>
+    <input name="username" id="username" type="text" class="form-control" placeholder="Username" required="true"/>
+  </div>
+  <div class="form-group mb-3">
+    <label class="label" for="password">Mot de Passe</label>
+    <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true"/>
+  </div>
+  <div class="form-group">
+    <input type="hidden" id="signInId" name="signInId"/>
+    <button id="modeButton" type="submit" class="form-control btn btn-primary rounded submit px-3">S'authentifier</button>
+  </div>
+</form>
+
+</body>
+</html>

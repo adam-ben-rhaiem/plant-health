@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: "Lato", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: normal;
+            background: #f8f9fd;
+            color: gray; }
+
+        a {
+            -webkit-transition: .3s all ease;
+            -o-transition: .3s all ease;
+            transition: .3s all ease;
+            color: #e3b04b; }
+        a:hover, a:focus {
+            text-decoration: none !important;
+            outline: none !important;
+            -webkit-box-shadow: none;
+            box-shadow: none; }
+
+        h1, h2, h3, h4, h5, h6{
+            line-height: 1.5;
+            font-weight: 400;
+            font-family: "Lato", Arial, sans-serif;
+            color: #000; }
+        .ftco-section {
+            padding: 7em 0; }
+        .wrap {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+            -moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+            box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24); }
+        .login-wrap {
+            width: 60%; }
+        @media (max-width: 1024px) {
+            .login-wrap {
+                width: 100%; } }
+        @media (max-width: 767.98px) {
+            .wrap .img {
+                height: 250px; } }
+
+        .login-wrap {
+            position: relative;
+            background: #fff;
+            background-font-weight: 300; }
+
+        .form-group {
+            position: relative; }
+        .form-group .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #000;
+            font-weight: 700; }
+        .form-group a {
+            color: gray; }
+
+        .form-control {
+            height: 48px;
+            background: #fff;
+            color: #000;
+            font-size: 16px;
+            border-radius: 5px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid rgba(0, 0, 0, 0.1); }
+        .form-control::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: rgba(0, 0, 0, 0.2) !important; }
+        .form-control::-moz-placeholder {
+            /* Firefox 19+ */
+            color: rgba(0, 0, 0, 0.2) !important; }
+        .form-control:-ms-input-placeholder {
+            /* IE 10+ */
+            color: rgba(0, 0, 0, 0.2) !important; }
+        .form-control:-moz-placeholder {
+            /* Firefox 18- */
+            color: rgba(0, 0, 0, 0.2) !important; }
+        .form-control:focus, .form-control:active {
+            outline: none !important;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid #e3b04b; }
+
+        .social-media {
+            position: relative;
+            width: 100%; }
+        .social-media .social-icon {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 16px;
+            margin-right: 5px;
+            border-radius: 50%; }
+        .social-media .social-icon span {
+            color: #999999; }
+        .social-media .social-icon:hover, .social-media .social-icon:focus {
+            background: #e3b04b; }
+        .social-media .social-icon:hover span, .social-media .social-icon:focus span {
+            color: #fff; }
+
+        .checkbox-wrap {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none; }
+
+        /* Hide the browser's default checkbox */
+        .checkbox-wrap input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0; }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0; }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "\f0c8";
+            font-family: "FontAwesome";
+            position: absolute;
+            color: rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            margin-top: -4px;
+            -webkit-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s; }
+        @media (prefers-reduced-motion: reduce) {
+            .checkmark:after {
+                -webkit-transition: none;
+                -o-transition: none;
+                transition: none; } }
+
+        /* Show the checkmark when checked */
+        .checkbox-wrap input:checked ~ .checkmark:after {
+            display: block;
+            content: "\f14a";
+            font-family: "FontAwesome";
+            color: rgba(0, 0, 0, 0.2); }
+
+        /* Style the checkmark/indicator */
+        .checkbox-primary {
+            color: #e3b04b; }
+        .checkbox-primary input:checked ~ .checkmark:after {
+            color: #e3b04b; }
+
+        .btn {
+            cursor: pointer;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            font-size: 15px;
+            padding: 10px 20px; }
+        .btn:hover, .btn:active, .btn:focus {
+            outline: none; }
+        .btn.btn-primary {
+            background: #e3b04b !important;
+            border: 1px solid #e3b04b !important;
+            color: #fff !important; }
+        .btn.btn-primary:hover {
+            border: 1px solid #e3b04b;
+            background: transparent;
+            color: #e3b04b; }
+        .btn.btn-primary.btn-outline-primary {
+            border: 1px solid #e3b04b;
+            background: transparent;
+            color: #e3b04b; }
+        .btn.btn-primary.btn-outline-primary:hover {
+            border: 1px solid transparent;
+            background: #e3b04b;
+            color: #fff; }
+    </style>
+    <script>
+        function parseQueryString(string) {
+            if(string == "") { return {}; }
+            var segments = string.split("&").map(s => s.split("=") );
+            var queryString = {};
+            segments.forEach(s => queryString[s[0]] = s[1]);
+            return queryString;
+        }
+        function base64ArrayBuffer(arrayBuffer) {
+            let base64    = '';
+            const encodings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+
+            let bytes         = new Uint8Array(arrayBuffer);
+            let byteLength    = bytes.byteLength;
+            let byteRemainder = byteLength % 3;
+            let mainLength    = byteLength - byteRemainder;
+
+            let a, b, c, d;
+            let chunk;
+
+            // Main loop deals with bytes in chunks of 3
+            for (let i = 0; i < mainLength; i = i + 3) {
+                // Combine the three bytes into a single integer
+                chunk = (bytes[i] << 16) | (bytes[i + 1] << 8) | bytes[i + 2];
+
+                // Use bitmasks to extract 6-bit segments from the triplet
+                a = (chunk & 16515072) >> 18; // 16515072 = (2^6 - 1) << 18
+                b = (chunk & 258048)   >> 12; // 258048   = (2^6 - 1) << 12
+                c = (chunk & 4032)     >>  6; // 4032     = (2^6 - 1) << 6
+                d = chunk & 63;               // 63       = 2^6 - 1
+
+                // Convert the raw binary segments to the appropriate ASCII encoding
+                base64 += encodings[a] + encodings[b] + encodings[c] + encodings[d];
+            }
+
+            // Deal with the remaining bytes and padding
+            if (byteRemainder === 1) {
+                chunk = bytes[mainLength];
+
+                a = (chunk & 252) >> 2; // 252 = (2^6 - 1) << 2
+
+                // Set the 4 least significant bits to zero
+                b = (chunk & 3)   << 4; // 3   = 2^2 - 1
+
+                base64 += encodings[a] + encodings[b] + '==';
+            } else if (byteRemainder === 2) {
+                chunk = (bytes[mainLength] << 8) | bytes[mainLength + 1];
+
+                a = (chunk & 64512) >> 10; // 64512 = (2^6 - 1) << 10
+                b = (chunk & 1008)  >>  4; // 1008  = (2^6 - 1) << 4
+
+                // Set the 2 least significant bits to zero
+                c = (chunk & 15)    <<  2; // 15    = 2^4 - 1
+
+                base64 += encodings[a] + encodings[b] + encodings[c] + '=';
+            }
+
+            return base64;
+        }
+
+
+        /**
+         * Use SHA-384: 384 bits = 48 bytes = 64 chars in Base64
+         * @param username The username associated with the password
+         * @param password The password for which we need to increase entropy
+         * @returns {Promise<ArrayBuffer>}
+         */
+        function increaseEntropy(username,password) {
+            const encoder = new window.TextEncoder();
+            const data = encoder.encode(username+"@phoenix.xyz:"+password);
+            return window.crypto.subtle.digest("SHA-384", data).then((hash)=>{
+                return base64ArrayBuffer(hash);
+            }).catch((error)=>{
+                console.log(error);
+            });
+        }
+
+        async function signIn(e){
+            e.preventDefault();
+            let loginForm = document.getElementById('signInForm');
+            let payload = new FormData(loginForm);
+            //let pwd = await increaseEntropy(payload.get('username'),payload.get('password'));
+            //payload.set('password',pwd);
+            let	myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            let options = {
+                method: 'POST',
+                headers: myHeaders,
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                redirect: 'follow',
+                body: new URLSearchParams(payload)
+            };
+            //console.log(`${loginForm.action}`);
+            fetch(`${loginForm.action}`, options)
+                .then(response => {
+                    // HTTP See Other 303 response
+                    if(response.redirected){
+                        window.location = response.url;
+                    }
+                }).catch(function(err) {
+                console.info(err + " url: " + `${loginForm.action}`);
+            });
+        }
+    </script>
+</head>
+<body>
+<form method="post" action="login/authorization" class="signin-form needs-validation" id="signInForm" novalidate>
+    <div class="form-group mb-3">
+        <label class="label" for="username">Identifiant</label>
+        <input name="username" id="username" type="text" class="form-control" placeholder="Username" required="true"/>
+    </div>
+    <div class="form-group mb-3">
+        <label class="label" for="password">Mot de Passe</label>
+        <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="true"/>
+    </div>
+    <div class="form-group">
+        <input type="hidden" id="signInId" name="signInId"/>
+        <button id="modeButton" type="submit" class="form-control btn btn-primary rounded submit px-3">S'authentifier</button>
+    </div>
+</form>
+<script>
+    let q = parseQueryString(window.location.search.substring(1));
+    let loginForm = document.getElementById('signInForm');
+    let base = loginForm.getAttribute("action");
+    loginForm.setAttribute("action",base+"?response_type="+q.response_type+"&code_challenge="+q.code_challenge+"&state="+q.state);
+    loginForm.addEventListener('submit',signIn);
+</script>
+
+</body>
+</html>
