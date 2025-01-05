@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Health Cloud Of Things</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link href="styles/main.css" rel="stylesheet" />
+	<script type="importmap">
+	{
+		"imports": {
+			"@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/+esm",
+			"bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/+esm"
+		}
+	}
+	</script>
+	<script type="module" defer="defer" src="scripts/main.js"></script>
+</head>
+<body>
+    <header>
+        <!-- <nav>
+            <a href="#b">Login</a>
+            <a href="#a">Logout</a>
+        </nav> -->
+        <!-- <nav class="navbar navbar-expand-md fixed-top bg-body-tertiary"> -->
+            <!-- <a class="nav-link active me-3" aria-current="page" href="/">Home</a>
+            <a class="nav-link active me-3" aria-current="page" href="/about">About</a>
+            <button id="pst" >Push State Test</button>
+            <button id="rst" >Replace State Test</button> -->
+            <nav>
+              <a href="/" onclick="route()">Home</a>
+              <a href="/about" onclick="route()">About</a>
+            </nav>
+
+            <!-- <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/" onclick="route()">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/predict" onclick="route()">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/fleet">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex" rel="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success me-2" type="submit">Search</button>
+                </form>
+                <div id="nav-vr" class="vr me-2"></div>
+                <button type="button" class="btn btn-warning btn-rounded" role="button" id="signin" title="Sign in" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<em><b>Sign in</b></em>"><svg class="bi me-2 opacity-75" width="1.25em" height="1.25em"><use href="#box-arrow-in-right"></use></svg></a>
+                <button type="button" class="btn btn-dark btn-rounded" role="button" id="signout" title="Sign out" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-title="<em><b>Sign out</b></em>"><svg class="bi me-2 opacity-75" width="1.25em" height="1.25em"><use href="#box-arrow-left"></use></svg></a>
+              </div>
+            </div> -->
+          <!-- </nav> -->
+    </header>
+    <main id="mainContent">
+        <p>hello bro</p>
+        <p>Heeeeeeeeeeeeeeeeeeeeeeeey</p>
+	  </main>
+    <!-- <footer class="footer mt-auto py-3 bg-body-tertiary">
+		<div class="container">
+          <div class="text-body-secondary text-muted">
+              <small>
+                Copyright © 2019&nbsp;-&nbsp;<span id="current-year"></span><script>document.getElementById("current-year").innerHTML = new Date().getFullYear()</script> All Rights Reserved&nbsp;
+              </small>
+			  <svg width="57px" height="57px" data-bs-toggle="popover" data-bs-placement="top" data-bs-title="Phoenix - Web of Things Team" data-bs-content="designed by Mohamed-B&eacute;cha Ka&acirc;niche"><use href="#wot-blue"></use></svg>		  
+          </div>
+        </div>
+	</footer> -->
+    <script  src="scripts/router.js"></script>
+
+</body>
+<script>
+  // window.addEventListener("hashchange",hashChange);
+  // window.addEventListener("popstate",popState);
+  // function hashChange(event){
+  //     console.log('hashChange');
+  //     console.log(history.state);
+  // }
+  // function popState(event){
+  //     console.log('popState');
+  //     console.log(history.state);
+  //     console.log(location);
+  //     console.log(history);
+  // }
+  // let pst = document.getElementById("pst");
+  // pst.addEventListener("click",(e)=>{
+  //   const obj={
+  //     name:'amir',
+  //     surname:'jribi'
+  //   }
+  //   history.pushState(obj,{},'/pst')
+  // })
+
+  // let rst = document.getElementById("rst");
+  // rst.addEventListener("click",(e)=>{
+  //   const obj={
+  //     name:'karama',
+  //     surname:'jribi'
+  //   }
+  //   history.replaceState(obj,{},'/rst')
+  // })
+</script>
+</html>
