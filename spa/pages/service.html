@@ -1,0 +1,87 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Service - PlantHealth</title>
+        <link rel="stylesheet" href="/server/public/styles/styles.css">
+        <script>
+          // Threshold values
+          const thresholds = {
+            temperature: 35, // Celsius
+            humidity: 60,    // Percentage
+            soilMoisture: 40 // Percentage
+          };
+      
+          async function fetchData() {
+            // Simulate fetching data from an API
+            const apiResponse = {
+              temperature: 30,
+              humidity: 50,
+              soilMoisture: 70
+            };
+      
+            // Display the fetched data and statuses
+            displayData(apiResponse);
+          }
+      
+          function displayData(data) {
+            const temperatureStatus = data.temperature <= thresholds.temperature ? "Good" : "Bad";
+            const humidityStatus = data.humidity <= thresholds.humidity ? "Good" : "Non";
+            const soilMoistureStatus = data.soilMoisture <= thresholds.soilMoisture ? "Good" : "Bad";
+      
+            document.getElementById('temperature-value').textContent = `${data.temperature}°C`;
+            document.getElementById('temperature-status').textContent = temperatureStatus;
+            document.getElementById('temperature-status').className = temperatureStatus.toLowerCase();
+      
+            document.getElementById('humidity-value').textContent = `${data.humidity}%`;
+            document.getElementById('humidity-status').textContent = humidityStatus;
+            document.getElementById('humidity-status').className = humidityStatus.toLowerCase();
+      
+            document.getElementById('soilMoisture-value').textContent = `${data.soilMoisture}%`;
+            document.getElementById('soilMoisture-status').textContent = soilMoistureStatus;
+            document.getElementById('soilMoisture-status').className = soilMoistureStatus.toLowerCase();
+          }
+      
+          // Load data when the page loads
+          window.onload = fetchData;
+        </script>
+      </head>
+      <body>
+      
+        <main>
+          <section class="form-section">
+            <div class="container">
+              <div class="form-wrapper">
+                <h2>Real-Time Monitoring</h2>
+                <div class="monitoring">
+                  <!-- Temperature -->
+                  <div class="data-box">
+                    <h3>Temperature</h3>
+                    <p id="temperature-value">Loading...</p>
+                    <p id="temperature-status">Loading...</p>
+                  </div>
+                  <!-- Humidity -->
+                  <div class="data-box">
+                    <h3>Humidity</h3>
+                    <p id="humidity-value">Loading...</p>
+                    <p id="humidity-status">Loading...</p>
+                  </div>
+                  <!-- Soil Moisture -->
+                  <div class="data-box">
+                    <h3>Soil Moisture</h3>
+                    <p id="soilMoisture-value">Loading...</p>
+                    <p id="soilMoisture-status">Loading...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      
+        <footer>
+          <p>&copy; 2025 PlantHealth. All rights reserved.</p>
+        </footer>
+      
+      </body>
+</html>

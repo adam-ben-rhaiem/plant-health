@@ -3,8 +3,7 @@ const assets = [
     "./scripts/main.js",
     "./styles/main.css",
     "./index.html",
-    "./pages/home.html",
-    "./pages/about.html"
+    
 
 ]
 //install Event Listener

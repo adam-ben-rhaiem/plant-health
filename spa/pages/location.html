@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care Finder</title>
+    <link rel="stylesheet" href="/server/public/styles/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  </head>
+  <body>
+    <section class="location" id="location">
+      <div class="container">
+        <h2>Find the Nearest Plant Care Center</h2>
+        <p id="location-message">Allow location access to find the nearest plant care center.</p>
+        <div id="map"></div>
+        <div id="nearest-center" class="info-box">
+          <h3>Nearest Plant Care Center:</h3>
+          <p id="center-name">Searching...</p>
+          <p id="center-address"></p>
+          <p id="center-phone"></p>
+          <p id="center-distance"></p>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/server/public/scripts/location.js"></script>
+  </body>
+</html>

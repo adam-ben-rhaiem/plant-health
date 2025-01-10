@@ -1,0 +1,313 @@
+/* style.css */
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    color: #2a2a2a;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #4caf50; /* Green to represent plants */
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: #2e7d32;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #4caf50;
+    padding: 8px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo img {
+    max-height: 50px;
+  }
+  
+  header .menublock {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .menublock a {
+    color: white;
+    font-size: 20px;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  header nav ul li {
+    position: relative;
+  }
+  
+  header nav ul li a {
+    color: white;
+    font-weight: bold;
+  }
+  
+  header nav ul li.active a {
+    border-bottom: 2px solid white;
+  }
+  
+  .showmenu,
+  .hidemenu {
+    display: none;
+  }
+  
+  /* Banner Styles */
+  .banner {
+    background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+    padding: 50px 0;
+  }
+  
+  .banner .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .banner .visual img {
+    max-width: 100%;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0 15px ;
+  }
+  
+  .banner .text {
+    max-width: 600px;
+  }
+  
+  .banner .text h1 {
+    font-size: 36px;
+    color: #2e7d32;
+    margin-bottom: 15px;
+  }
+  
+  .banner .text p {
+    font-size: 18px;
+    color: #4caf50;
+    margin-bottom: 20px;
+  }
+  
+  .banner .text a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .banner .text a:hover {
+    background-color: #2e7d32;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .banner .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    header nav ul {
+      flex-direction: column;
+      gap: 10px;
+      background-color: #4caf50;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      display: none;
+    }
+  
+    .showmenu {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .hidemenu {
+      display: none;
+      cursor: pointer;
+    }
+  
+    .menublock.open nav ul {
+      display: flex;
+    }
+  
+    .menublock.open .showmenu {
+      display: none;
+    }
+  
+    .menublock.open .hidemenu {
+      display: block;
+    }
+  }
+  /* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* About Section Styles */
+.about {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.about .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.about .text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about .text h2 {
+  font-size: 36px;
+  color: #2e7d32; /* Green for plant-themed design */
+  margin-bottom: 20px;
+}
+
+.about .para p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.about .para p:last-child {
+  margin-bottom: 0;
+}
+
+.about .visual {
+  flex: 1;
+  text-align: center;
+}
+
+.about .visual img {
+  max-width: 100%; /* Ensures the image resizes responsively */
+  width: 90%;      /* Makes the image larger while keeping it within the container */
+  height: auto;    /* Maintains the aspect ratio of the image */
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;  /* Centers the image if it's within a flex or block layout */
+  display: block;  /* Ensures proper alignment */
+}
+
+/* Footer Styles */
+footer {
+	background-color: #4caf50;
+	padding: 10px 15px;
+	box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center; /* Center the content */
+	align-items: center;
+  }
+  
+  footer .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1200px; /* Constrain max width */
+	width: 100%;
+  }
+  
+  footer .footer-logo img {
+	max-height: 30px;
+  }
+  
+  footer .footer-text {
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	margin-left: auto; /* Push the text to the right */
+  }
+  
+ /* Main Styling */
+main {
+	flex: 1; /* Ensures main content takes up the available space */
+	display: flex;
+	justify-content: center; /* Center content horizontally */
+	align-items: center; /* Center content vertically */
+	padding-top: 50px;
+  }
+  
+  /* Form Section Styling */
+  .form-section {
+	text-align: center;
+	width: 90%; /* Constrain content to 90% of the page width */
+  }
+  
+  h2 {
+	color: #2e7d32;
+	font-size: 24px;
+	margin-bottom: 20px;
+  }
+  
+  /* Monitoring Boxes */
+  .monitoring {
+	display: flex;
+	justify-content: space-between; /* Distribute boxes evenly */
+	gap: 20px; /* Add spacing between boxes */
+	width: 90%; /* Make the row of boxes take 90% of the available horizontal space */
+	margin: 0 auto; /* Center the row horizontally */
+  }
+  
+  .data-box {
+	background: #fff;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	border-radius: 8px;
+	flex: 1; /* Allow boxes to grow and fill available space */
+	text-align: center;
+  }
+  
+  .data-box:not(:last-child) {
+	margin-right: 20px; /* Space between boxes (optional since `gap` handles this) */
+  }
+  
+  .data-box h3 {
+	color: #2e7d32;
+	margin-bottom: 10px;
+  }
+  
+  .data-box p {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 5px 0;
+  }
