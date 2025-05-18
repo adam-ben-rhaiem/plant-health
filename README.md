@@ -63,4 +63,6 @@ With our school mail, we can get a 100$ voucher inside of Microsoft Azure. With 
 # 🔐 Security and Certification
 - We have enabled HTTPS with letsencrypt TLS certificate with HSTS enabled as well, ensuring only secure connections are allowed to the middleware.
 Enabling TLS1.3 only on wildfly helps to generate A grading on SSLabs.
+
+
 ![Alt text](https://github.com/Amir-Jribi/Fire-Detection/blob/main/Docs/SSl%20Report.jpg)
