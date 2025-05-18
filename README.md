@@ -1,6 +1,6 @@
 # 🌱 Plant Health Monitoring System
 
-> **A smart solution for next-generation agriculture using IoT, AI, and web technologies.**
+**A smart solution for next-generation agriculture using IoT, AI, and web technologies.**
 
 ## 🚀 Overview
 This project was developed as part of an academic module, focusing on delivering an innovative solution to **monitor plant health** in real time. Leveraging **IoT sensors**, **AI models**, and a responsive **Progressive Web App (PWA)**, the system provides users with insightful data on plant environments and directs them to nearby agricultural centers when support is needed.
