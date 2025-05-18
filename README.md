@@ -1,6 +1,9 @@
-# Plant Health Monitoring System
+# 🌱 Plant Health Monitoring System
 
-This project was realized as part of an academic module to develop an innovative solution for monitoring plant health using IoT and AI technologies. The system aims to capture data from sensors, display it to users via a Progressive Web App (PWA), and provide AI-based insights into whether the environmental conditions are suitable for plant growth. Additionally, the system offers location-based services to direct users to the nearest agricultural centers.
+> **A smart solution for next-generation agriculture using IoT, AI, and web technologies.**
+
+## 🚀 Overview
+This project was developed as part of an academic module, focusing on delivering an innovative solution to **monitor plant health** in real time. Leveraging **IoT sensors**, **AI models**, and a responsive **Progressive Web App (PWA)**, the system provides users with insightful data on plant environments and directs them to nearby agricultural centers when support is needed.
 
 ## Created by:
 - Adam Ben Rhaiem
