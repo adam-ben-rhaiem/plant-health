@@ -61,8 +61,9 @@ With our school mail, we can get a 100$ voucher inside of Microsoft Azure. With 
 - vCPUS: 2
 - Ressource disk size: 8GB
 # 🔐 Security and Certification
-- We have enabled HTTPS with letsencrypt TLS certificate with HSTS enabled as well, ensuring only secure connections are allowed to the middleware.
-Enabling TLS1.3 only on wildfly helps to generate A grading on SSLabs.
-
+- Enforced HTTPS with Let's Encrypt TLS certificates
+- Enabled HSTS for strict transport security
+- Limited to TLS 1.3 only
+- Achieved A Grade on SSL Labs
 
 ![Alt text](https://github.com/Amir-Jribi/Fire-Detection/blob/main/Docs/SSl%20Report.jpg)
