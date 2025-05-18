@@ -18,6 +18,8 @@ The **Plant Health Monitoring System** is an end-to-end smart agriculture tool d
 - 📱 Display real-time data and insights via a modern, mobile-friendly **Progressive Web App (PWA)**.
 
 
+## 🏗️ System Architecture
+
 ![Architecture](Docs/architecture.jpg)
 
 ---
