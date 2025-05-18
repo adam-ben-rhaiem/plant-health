@@ -3,7 +3,7 @@
 This project was realized as part of an academic module to develop an innovative solution for monitoring plant health using IoT and AI technologies. The system aims to capture data from sensors, display it to users via a Progressive Web App (PWA), and provide AI-based insights into whether the environmental conditions are suitable for plant growth. Additionally, the system offers location-based services to direct users to the nearest agricultural centers.
 
 ## Created by:
-- Adam Ben Rhaeim
+- Adam Ben Rhaiem
 - Amir Jribi
 - Mohamed Saket
 
